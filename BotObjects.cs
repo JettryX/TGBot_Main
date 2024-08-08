@@ -39,7 +39,7 @@ class BotCommand<X> : BasicCommand
 
     public String Handle(X arg)
     {
-        return handler.Invoke(arg);
+        return handler != null ? handler.Invoke(arg) : "Ошибка";
     }
 }
 

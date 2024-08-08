@@ -53,7 +53,6 @@ namespace TGBot_Main
                     case UpdateType.Message:
                         String response = getTextResponse(msg);
                         await telegramBot.SendTextMessageAsync(msg.Chat, response);
-                        lastCommandsPerUser[msg.Chat.Id] = response;
                         break;
                     // можно захендлить другие типы дальше    
                     default:
@@ -91,6 +90,11 @@ namespace TGBot_Main
                 {
                     BasicCommand x = botCommands[strParams[0]];
                     response = ((BotCommand<Message>)x).Handle(msg);
+                    lastCommandsPerUser[msg.Chat.Id] = response;
+                }
+                else
+                {
+                    response = "Неизвестная команда";
                 }
              
             }
