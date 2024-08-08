@@ -1,0 +1,5 @@
+﻿{
+	"GREET_MSG": "Привет. Я могу найти тебе информацию о компаниях по ИНН, вводи /inn <ИНН>!",
+	"TG_Token": "insert TG Token here",
+	"INN_Token": "insert INN Token here"
+}
